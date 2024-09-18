@@ -35,8 +35,9 @@ class PopularityRecommender():
         # Apply the popularity score calculation to each row
         self.dataset['Popularity'] = self.dataset.apply(CalculatePopularityScore, axis=1)
 
+        # Internal function to normalize popularity values
         def NormalizePopularity(row):
-            return row['Popularity'] / np.max(self.dataset['Popularity'])
+            return row['Popularity'] / np.max(self.dataset['Popularity'])  # Normalize by the maximum popularity value
 
         self.dataset['Popularity'] = self.dataset.apply(NormalizePopularity, axis=1)
 
