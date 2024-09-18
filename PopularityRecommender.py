@@ -11,9 +11,11 @@ class PopularityRecommender():
         self.beta = beta  # Weight for Average Visitors
 
 
+    # Method to update alpha and beta weights
     def UpdateWeights(self, a, b):
-        self.alpha = a
-        self.beta = b
+        self.alpha = a  # Update alpha with new value
+        self.beta = b  # Update beta with new value
+
 
     def CalculatePopularity(self):
         """
