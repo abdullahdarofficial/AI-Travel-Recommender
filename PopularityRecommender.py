@@ -1,5 +1,5 @@
-import pandas as pd
-import numpy as np
+import pandas as pd  # Import pandas for data manipulation
+import numpy as np  # Import numpy for numerical operationsnp
 
 
 class PopularityRecommender():
@@ -8,18 +8,15 @@ class PopularityRecommender():
         self.alpha = alpha
         self.beta = beta
 
-
     def UpdateWeights(self, a, b):
         self.alpha = a
         self.beta = b
-
 
     def CalculatePopularity(self):
         """
             Popularity Formula:
             Popularity = (((Popularity Index * Avg Visitors) + (Popularity Index * alpha) + (Avg Visitors * beta)) / mean(Popularity Index))/ Max Popularity
         """
-
 
         def CalculatePopularityScore(row):
 
