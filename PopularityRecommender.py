@@ -15,5 +15,12 @@ class PopularityRecommender():
 
 
 
+    def CalculatePopularity(self):
+        """
+            Popularity Formula:
+            Popularity = (((Popularity Index * Avg Visitors) + (Popularity Index * alpha) + (Avg Visitors * beta)) / mean(Popularity Index))/ Max Popularity
+        """
+
+
 if __name__ == '__main__':
     PR = PopularityRecommender()
