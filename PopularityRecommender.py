@@ -32,6 +32,7 @@ class PopularityRecommender():
             a /= np.mean(self.dataset['Popularity Index'])  # Normalize by the mean of popularity index
             return a  # Return the calculated popularity score
 
+        # Apply the popularity score calculation to each row
         self.dataset['Popularity'] = self.dataset.apply(CalculatePopularityScore, axis=1)
 
         def NormalizePopularity(row):
