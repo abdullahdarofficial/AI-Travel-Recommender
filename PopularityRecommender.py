@@ -14,7 +14,6 @@ class PopularityRecommender():
         self.beta = b
 
 
-
     def CalculatePopularity(self):
         """
             Popularity Formula:
@@ -28,22 +27,22 @@ class PopularityRecommender():
             a += row['Avg Visitors']*self.beta
             a /= np.mean(self.dataset['Popularity Index'])
 
-
             return a
 
-    self.dataset['Popularity'] = self.dataset.apply(CalculatePopularityScore, axis=1)
+        self.dataset['Popularity'] = self.dataset.apply(CalculatePopularityScore, axis=1)
 
-    def NormalizePopularity(row):
-        return row['Popularity'] / np.max(self.dataset['Popularity'])
+        def NormalizePopularity(row):
+            return row['Popularity'] / np.max(self.dataset['Popularity'])
 
-    self.dataset['Popularity'] = self.dataset.apply(NormalizePopularity, axis=1)
+        self.dataset['Popularity'] = self.dataset.apply(NormalizePopularity, axis=1)
 
 
-def recommend(self):
-    self.CalculatePopularity()
+    def recommend(self):
+        self.CalculatePopularity()
 
-    return self.dataset[['ID', 'Country', 'Popularity']]
+        return self.dataset[['ID', 'Country', 'Popularity']]
 
 
 if __name__ == '__main__':
     PR = PopularityRecommender()
+    print(PR.Recommend())
