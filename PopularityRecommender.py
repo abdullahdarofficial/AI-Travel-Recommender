@@ -24,14 +24,13 @@ class PopularityRecommender():
         Popularity = (((Popularity Index * Avg Visitors) + (Popularity Index * alpha) + (Avg Visitors * beta)) / mean(Popularity Index))/ Max Popularity
         """
 
+        # Internal function to calculate the popularity score for each row
         def CalculatePopularityScore(row):
-
-            a = (row['Popularity Index'])*(row['Avg Visitors'])
-            a += row['Popularity Index']*self.alpha
-            a += row['Avg Visitors']*self.beta
-            a /= np.mean(self.dataset['Popularity Index'])
-
-            return a
+            a = (row['Popularity Index'])*(row['Avg Visitors'])  # Calculate product of popularity index and average visitors
+            a += row['Popularity Index']*self.alpha  # Add weighted popularity index
+            a += row['Avg Visitors']*self.beta  # Add weighted average visitors
+            a /= np.mean(self.dataset['Popularity Index'])  # Normalize by the mean of popularity index
+            return a  # Return the calculated popularity score
 
         self.dataset['Popularity'] = self.dataset.apply(CalculatePopularityScore, axis=1)
 
