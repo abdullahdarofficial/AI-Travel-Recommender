@@ -49,6 +49,12 @@ class PopularityRecommender():
         return self.dataset[['ID', 'Country', 'Popularity']]  # Return relevant columns
 
 
+# Main entry point for running the recommender
 if __name__ == '__main__':
-    PR = PopularityRecommender()
-    print(PR.Recommend())
+    PR = PopularityRecommender()  # Initialize the popularity recommender
+    print(PR.Recommend())  # Print recommendations
+
+
+
+
+
