@@ -20,6 +20,7 @@ class PopularityRecommender():
             Popularity = (((Popularity Index * Avg Visitors) + (Popularity Index * alpha) + (Avg Visitors * beta)) / mean(Popularity Index))/ Max Popularity
         """
 
+
         def CalculatePopularityScore(row):
 
             a = (row['Popularity Index'])*(row['Avg Visitors'])
