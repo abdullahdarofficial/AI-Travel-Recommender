@@ -43,10 +43,10 @@ class PopularityRecommender():
         self.dataset['Popularity'] = self.dataset.apply(NormalizePopularity, axis=1)
 
 
+    # Method to recommend based on calculated popularity
     def recommend(self):
-        self.CalculatePopularity()
-
-        return self.dataset[['ID', 'Country', 'Popularity']]
+        self.CalculatePopularity()  # Calculate popularity scores
+        return self.dataset[['ID', 'Country', 'Popularity']]  # Return relevant columns
 
 
 if __name__ == '__main__':
