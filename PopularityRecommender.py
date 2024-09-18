@@ -2,6 +2,7 @@ import pandas as pd  # Import pandas for data manipulation
 import numpy as np  # Import numpy for numerical operationsnp
 
 
+# Class for creating a popularity-based recommender system
 class PopularityRecommender():
     def __init__(self, dataset='world-popularity.csv', alpha=0.5, beta=0.5):
         self.dataset = pd.read_csv(dataset)
