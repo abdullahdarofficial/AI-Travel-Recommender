@@ -1,6 +1,5 @@
 import pandas as pd  # Import pandas for data manipulation
-import numpy as np  # Import numpy for numerical operationsnp
-
+import numpy as np  # Import numpy for numerical operations
 
 # Class for creating a popularity-based recommender system
 class PopularityRecommender():
@@ -10,12 +9,10 @@ class PopularityRecommender():
         self.alpha = alpha  # Weight for Popularity Index
         self.beta = beta  # Weight for Average Visitors
 
-
     # Method to update alpha and beta weights
     def UpdateWeights(self, a, b):
         self.alpha = a  # Update alpha with new value
         self.beta = b  # Update beta with new value
-
 
     # Method to calculate popularity based on formula
     def CalculatePopularity(self):
@@ -23,7 +20,6 @@ class PopularityRecommender():
         Popularity Formula:
         Popularity = (((Popularity Index * Avg Visitors) + (Popularity Index * alpha) + (Avg Visitors * beta)) / mean(Popularity Index))/ Max Popularity
         """
-
         # Internal function to calculate the popularity score for each row
         def CalculatePopularityScore(row):
             a = (row['Popularity Index'])*(row['Avg Visitors'])  # Calculate product of popularity index and average visitors
@@ -42,19 +38,12 @@ class PopularityRecommender():
         # Apply normalization to each row
         self.dataset['Popularity'] = self.dataset.apply(NormalizePopularity, axis=1)
 
-
     # Method to recommend based on calculated popularity
     def recommend(self):
         self.CalculatePopularity()  # Calculate popularity scores
         return self.dataset[['ID', 'Country', 'Popularity']]  # Return relevant columns
 
-
 # Main entry point for running the recommender
 if __name__ == '__main__':
     PR = PopularityRecommender()  # Initialize the popularity recommender
     print(PR.Recommend())  # Print recommendations
-
-
-
-
-
