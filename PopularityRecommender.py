@@ -9,6 +9,10 @@ class PopularityRecommender():
         self.beta = beta
 
 
+    def UpdateWeights(self, a, b):
+        self.alpha = a
+        self.beta = b
+
 
 
 if __name__ == '__main__':
