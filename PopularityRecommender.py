@@ -4,10 +4,12 @@ import numpy as np  # Import numpy for numerical operationsnp
 
 # Class for creating a popularity-based recommender system
 class PopularityRecommender():
+    # Constructor to initialize the dataset and weights (alpha, beta)
     def __init__(self, dataset='world-popularity.csv', alpha=0.5, beta=0.5):
-        self.dataset = pd.read_csv(dataset)
-        self.alpha = alpha
-        self.beta = beta
+        self.dataset = pd.read_csv(dataset)  # Load the dataset from a CSV file
+        self.alpha = alpha  # Weight for Popularity Index
+        self.beta = beta  # Weight for Average Visitors
+
 
     def UpdateWeights(self, a, b):
         self.alpha = a
