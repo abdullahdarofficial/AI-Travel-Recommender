@@ -26,3 +26,15 @@ def askAI():
     }, stream=True)
       # str = response.text
       # print(str)
+    text = ''
+    for chunk in response.iter_content(chunk_size=1024):
+        if chunk:
+            text += chunk.decode('utf-8')
+    #print(text)
+    return text
+
+#while True:
+#try:
+text = askAI()
+text = text.replace('YOU CAN BUY ME COFFE! https://buymeacoffee.com/mygx', '')
+text = text.replace("Based on the user's prompt, the keywords that most accurately describe their preferences for a travel destination are: ", '')
