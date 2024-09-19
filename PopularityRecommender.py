@@ -47,4 +47,3 @@ class PopularityRecommender():
 if __name__ == '__main__':
     PR = PopularityRecommender()  # Initialize the popularity recommender
     print(PR.Recommend())  # Print recommendations
-
