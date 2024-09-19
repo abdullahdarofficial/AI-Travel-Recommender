@@ -45,4 +45,11 @@ def extract_data(text):
 
 def ask():
         import pickle
-c
+
+        api_key =None
+
+        with open('OpenAI_API.bin', 'rb') as f:
+            api_key = pickle.load(f)
+
+        client = OpenAI(api_key=api_key)
+        response = client.chat.completions.create(
