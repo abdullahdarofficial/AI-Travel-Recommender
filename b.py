@@ -24,3 +24,16 @@ def askAI():
         if chunk:
             print(chunk.decode('utf-8'))
             buffer += chunk.decode('utf-8')
+            try:
+                data = json.loads(buffer)
+                content = data.get('choices', [{}])[0].get('delta', {}).get('content', '')
+                text += content
+                buffer = ''  # Clear the buffer once we've successfully parsed it
+            except json.JSONDecodeError:
+                # If a JSONDecodeError is raised, it means that the buffer does not contain a complete JSON object
+                # So we just continue accumulating chunks in the buffer
+                pass
+
+    return text
+
+
