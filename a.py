@@ -56,19 +56,3 @@ print('Llama3:',text)#, budget)
 # #except ValueError:
 #     #print("Error: The text is missing something. Trying again...")
 
-
-# ({
-# f'prompt': """{
-#     'systemPrompt': 'You have to analyse the user prompt and generate keywords for the following keywords that most accurately describes 
-#     users preferences for a travel destination. The keywords are: ['europe', 'history', 'mountain', 'cold', 'skyscrapper', 'desert', 'beach',
-#     'asia', 'hot', 'food', 'culture', 'island', 'northamerica', 'southamerica',
-#     'africa', 'plain', 'wildlife', 'australia', 'forest'].',
-#     'user': 'i like a place with beautiful nature and culture and some food and i also like places with beaches and nice and warm weather and my budegt for 2 days is 152',
-#     'Assistant': #'keywords are: beach, culture, food, hot - 76',
-#     'user': 'i like a place with beautiful nature and culture and some food and i also like places with beaches and nice and warm weather and my budegt for 2 days is 152',
-#     }""",
-#       "temperature":0,
-#       "topP":0.1,
-#       "lengthPenality":0.3,
-#        "maxTokens": 200
-#     }, stream=True)
