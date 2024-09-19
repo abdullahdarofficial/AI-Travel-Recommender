@@ -70,3 +70,8 @@ def ask():
 
         print(countries)
 
+
+text = askAI()
+print('Llama3:\n', text)
+#data = extract_data(text)
+#print('Llama3:\n', text, '\nExtracted Data:\n', data)
