@@ -19,3 +19,10 @@ def askAI():
     'Assistant': 'keywords are: keyword0,keyword1,keyword2,keyword3... - budget per day (if given)',
     'user': 'i like a place with beautiful nature and culture and some food and i also like places with beaches and nice and warm weather',
     }""",
+      "temperature":0,
+      "topP":0.3,
+      "lengthPenality":0.3,
+       "maxTokens": 200
+    }, stream=True)
+      # str = response.text
+      # print(str)
