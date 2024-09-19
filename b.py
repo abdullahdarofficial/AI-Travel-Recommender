@@ -37,3 +37,12 @@ def askAI():
     return text
 
 
+
+def extract_data(text):
+    matches = re.findall(r'\[([^]]*)\]', text)
+    countries = [country.strip() for country in matches[0].split(',')]
+    return countries
+
+def ask():
+        import pickle
+c
