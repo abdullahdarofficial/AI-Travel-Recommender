@@ -62,3 +62,11 @@ def ask():
         text = response.choices[0].message.content
         print('\n GPT:\n', text)
 
+        matches = re.findall(r'\[([^]]*)\]', text)
+        if matches:
+            countries = [country.strip() for country in matches[0].split(',')]
+        else:
+            countries = []
+
+        print(countries)
+
