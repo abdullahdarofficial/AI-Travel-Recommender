@@ -49,10 +49,3 @@ print('Llama3:',text)#, budget)
 # #keywords, budget = keywords_and_budget.split('-')
 # #print('keywords, budget',keywords, budget)
 # keywords = keywords_and_budget[1]
-# #keywords = keywords.strip()
-# #budget = budget.strip()
-# print(keywords)
-#     #break
-# #except ValueError:
-#     #print("Error: The text is missing something. Trying again...")
-
