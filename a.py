@@ -45,7 +45,3 @@ print('Llama3:',text)#, budget)
 # keywords_and_budget = []
 # # Split the text on the colon to separate the keywords and budget from the rest of the text
 # keywords_and_budget.append(text.split(':'))
-# print('keywords & budget',keywords_and_budget)
-# #keywords, budget = keywords_and_budget.split('-')
-# #print('keywords, budget',keywords, budget)
-# keywords = keywords_and_budget[1]
