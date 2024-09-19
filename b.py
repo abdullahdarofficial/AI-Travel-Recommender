@@ -16,4 +16,11 @@ def askAI():
       "topP":0.3,
       "lengthPenality":0.3,
        "maxTokens": 2000
-    },
+    }, stream=True)
+
+    text = ''
+    buffer = ''
+    for chunk in response.iter_content(chunk_size=1024):
+        if chunk:
+            print(chunk.decode('utf-8'))
+            buffer += chunk.decode('utf-8')
