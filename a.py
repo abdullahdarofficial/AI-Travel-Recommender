@@ -38,10 +38,3 @@ def askAI():
 text = askAI()
 text = text.replace('YOU CAN BUY ME COFFE! https://buymeacoffee.com/mygx', '')
 text = text.replace("Based on the user's prompt, the keywords that most accurately describe their preferences for a travel destination are: ", '')
-
-#_, budget = text.split('$')
-
-print('Llama3:',text)#, budget)
-# keywords_and_budget = []
-# # Split the text on the colon to separate the keywords and budget from the rest of the text
-# keywords_and_budget.append(text.split(':'))
