@@ -87,3 +87,14 @@ class Card(ctk.CTkFrame):
         self.button_detail.grid(row=1, column=3, pady=(8,13), padx=5)
 
 
+    def search(self):
+        self.map_widget.delete_all_marker()
+        if self.search_entry.get() == '':
+            return
+
+        try:
+
+            url = f"https://api.geoapify.com/v1/geocode/search?text={self.search_entry.get()}&limit=20&format=json&apiKey=d76f029b27e04a9cb47a5356a7bf2a87"
+            response = requests.get(url)
+
+            response = response.json()
