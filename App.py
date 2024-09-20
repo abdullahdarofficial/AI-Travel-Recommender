@@ -532,3 +532,25 @@ if __name__ == '__main__':
                 raise ValueError('User ID not found!!')
         except ValueError as e:
             tk.messagebox.showerror('Error', str(e))
+        except Exception as e:
+            tk.messagebox.showerror('Error', 'An unexpected error occurred: ' + str(e))
+
+
+    ctk.CTkLabel(fr, text='Login', font=('Arial', 20, 'bold')).grid(row=0, column=1, pady=(40, 50))
+
+    ent = ctk.CTkEntry(fr, placeholder_text='Enter User ID', height=30, corner_radius=19)
+    ent.grid(row=1, column=1, pady=10, padx=30)
+    ent.bind('<Return>', lambda e: login_action(ent.get(), master))
+
+    btn = ctk.CTkButton(fr, text='Login', corner_radius=19, height=30, width=90, command=lambda: login_action(ent.get(), master))
+    btn.grid(row=2, column=1, pady=(20,40), padx=10)
+
+    master.mainloop()
+    print(id)
+
+    if logged:
+        ctk.AppearanceModeTracker.set_appearance_mode('dark')
+        ctk.set_default_color_theme('dark-blue')
+
+        app = ctk.CTk()
+        app.title('AI-Travel Recommender')
