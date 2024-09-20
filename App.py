@@ -526,3 +526,9 @@ if __name__ == '__main__':
             ids = ids['user'].unique()
             if user_id in ids:
                 id = user_id
+                logged = True
+                fr.destroy()
+            else:
+                raise ValueError('User ID not found!!')
+        except ValueError as e:
+            tk.messagebox.showerror('Error', str(e))
