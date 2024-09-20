@@ -506,3 +506,23 @@ def chat_page(fr):
 
 if __name__ == '__main__':
     id = -1
+    logged = False
+    master = ctk.CTk()
+    master.title('Login')
+    master.geometry('250x300')
+    master.resizable(False, False)
+    master.columnconfigure((0,7), weight=1)
+    master.rowconfigure((0,7), weight=1)
+
+    fr = ctk.CTkFrame(master, corner_radius=19)
+    fr.grid(row=1, column=1, sticky='nsew')
+    fr.columnconfigure((0,7), weight=1)
+
+    def login_action(user_id, fr):
+        global id, logged
+        try:
+            user_id = int(user_id)
+            ids = pd.read_csv('ratings.csv')
+            ids = ids['user'].unique()
+            if user_id in ids:
+                id = user_id
