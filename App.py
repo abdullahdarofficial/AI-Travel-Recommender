@@ -208,3 +208,18 @@ class Card(ctk.CTkFrame):
         global special_cases
 
         top = ctk.CTkToplevel()
+        top.title('Details')
+        top.geometry('900x700')
+        top.grab_set()
+        top.resizable(False, False)
+        top.columnconfigure((0,6), weight=1)
+
+        search_frame = ctk.CTkFrame(top, width=400, height=40, corner_radius=19, fg_color='transparent')
+        search_frame.grid(row=0, column=1, padx=10, pady=(10,5), columnspan=3)
+        search_frame.columnconfigure((0,7), weight=1)
+
+        self.search_entry = ctk.CTkEntry(search_frame, width=400, height=30, corner_radius=19)
+        self.search_entry.grid(row=0, column=1)
+        self.search_entry.bind('<Return>', lambda e: self.search())
+
+        search_button = ctk.CTkButton(search_frame, text='', width=20, height=30, fg_color='#1A1A1A',
