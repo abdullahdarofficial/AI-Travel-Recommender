@@ -76,3 +76,14 @@ class Card(ctk.CTkFrame):
 
         self.body_dim = (width-16, height*0.6)
         self.body = ctk.CTkFrame(self, width=self.body_dim[0], height=self.body_dim[1], corner_radius=cr, border_width=3)
+        self.body.grid(row=1, column=0, columnspan=3, pady=(5, 8), padx=8, sticky="ews")
+
+        self.body.grid_columnconfigure((0,7), weight=1)
+
+        self.title = ctk.CTkLabel(self.body, text=title, corner_radius=cr, font=('Arial', 14, 'bold'))
+        self.title.grid(row=0, column=3, pady=5, padx=5)
+
+        self.button_detail = ctk.CTkButton(self.body, text='View Detail', corner_radius=cr, command=lambda: self.view_detail(title))
+        self.button_detail.grid(row=1, column=3, pady=(8,13), padx=5)
+
+
