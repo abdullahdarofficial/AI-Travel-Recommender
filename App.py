@@ -396,3 +396,16 @@ def askAI_2(prompt):
 
     if prompt.lower().startswith("/suggest"):
         prompt = prompt.lower()
+        prompt = prompt.replace("/suggest", "", 1).strip()
+
+        response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You have to analyse the user prompt and suggest them more than 5 countries based on their preferences. you only have to suggest them countries based on their preferences and write the standand Name for the countries. You Have to Follow a specific format to suggest them countries in all cases no exception. The format is: [country Name1, Country Name2, Country Name3, ...., country Name N]"},
+            {"role": "user", "content": f"{prompt}"}
+        ])
+
+        text = response.choices[0].message.content
+        print('\n', text)
+
+        matches = re.findall(r'\[([^]]*)\]', text)
