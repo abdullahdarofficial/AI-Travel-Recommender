@@ -343,3 +343,22 @@ def askAI_1(prompt):
 
         text = ''
         for chunk in response.iter_content(chunk_size=1024):
+            if chunk:
+                chunk_decoded = chunk.decode('utf-8')
+                if chunk_decoded.strip():  # Check if chunk_decoded is not empty
+                    data = json.loads(chunk_decoded)
+                    content = data.get('choices', [{}])[0].get('delta', {}).get('content', '')
+                    text += content
+
+
+
+        matches = re.findall(r'\[([^]]*)\]', text)
+        if matches:
+            countries = [country.strip() for country in matches[0].split(',')]
+        else:
+            countries = []
+
+        return False, countries
+
+    else:
+        response = requests.post('https://fumes-api.onrender.com/llama3',
