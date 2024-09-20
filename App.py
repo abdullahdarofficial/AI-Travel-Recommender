@@ -251,3 +251,17 @@ class Card(ctk.CTkFrame):
         #         tk.messagebox.showerror('Error', str('Check Internet Connection\n Connection Time Out!!'))
 
 
+        sat_but = ctk.CTkButton(self.map_widget, text='', width=26, height=26, command=self.satelite_tile,
+                                image=ctk.CTkImage(dark_image=Image.open('Images/satellite.png'), size=(20,20)),
+                                corner_radius=2, fg_color='#333333', hover_color='#555555'
+                                )
+        sat_but.place(x=15, y=81, anchor='nw')
+
+        def_but = ctk.CTkButton(self.map_widget, text='', width=26, height=26, command=self.default_tile,
+                                image=ctk.CTkImage(dark_image=Image.open('Images/default.png'), size=(20,20)),
+                                corner_radius=2, fg_color='#333333', hover_color='#555555'
+                                )
+        def_but.place(x=15, y=114, anchor='nw')
+
+        detail = ctk.CTkScrollableFrame(top, width=650, height=200, corner_radius=19, fg_color='black')
+        detail.grid(row=2, column=1, padx=10, pady=10)
