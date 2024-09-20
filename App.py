@@ -442,3 +442,9 @@ def show_recommendation(fr, countries, row):
     roll = ctk.CTkScrollableFrame(fr, corner_radius=19, orientation='horizontal', width=1250, height=250)
     roll.grid(row=row, column=0, padx=20, pady=20, columnspan=3)
 
+    if len(countries) == 0:
+        ctk.CTkLabel(fr, text='No countries found :(', font=('Arial', 14, 'bold')).grid(row=row, column=0, padx=10, pady=10)
+        return
+
+    for i in range(len(countries)):
+        if '...' in countries[i]:
