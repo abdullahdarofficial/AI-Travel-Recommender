@@ -28,3 +28,12 @@ def get_places(geo_id, lat, lon, place=True):
     if place:
         response = requests.get(ID_url)
         id = response.json()
+        id = id['results'][0]['place_id']
+        print(id)
+        url = f"https://api.geoapify.com/v2/places?categories=accommodation.hotel,accommodation.hut,activity,sport,heritage,ski,tourism,leisure,natural,rental.bicycle,rental.ski,entertainment&conditions=named&filter=place:{id}&limit=10&apiKey=d76f029b27e04a9cb47a5356a7bf2a87"
+        result = requests.get(url)
+
+    else:
+        iso = get_iso(lat, lon)
+        iso_id = iso['properties']['id']
+        url = f"https://api.geoapify.com/v2/places?categories=accommodation.hotel,accommodation.hut,activity,sport,heritage,ski,tourism,leisure,natural,rental.bicycle,rental.ski,entertainment&conditions=named&filter=geometry:{iso_id}&limit=10&apiKey=d76f029b27e04a9cb47a5356a7bf2a87"
