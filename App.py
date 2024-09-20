@@ -409,3 +409,13 @@ def askAI_2(prompt):
         print('\n', text)
 
         matches = re.findall(r'\[([^]]*)\]', text)
+        if matches:
+            countries = [country.strip() for country in matches[0].split(',')]
+        else:
+            countries = []
+
+        return False, countries
+
+    else:
+        global convo_history
+        # premade personas
