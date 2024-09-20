@@ -265,3 +265,18 @@ class Card(ctk.CTkFrame):
 
         detail = ctk.CTkScrollableFrame(top, width=650, height=200, corner_radius=19, fg_color='black')
         detail.grid(row=2, column=1, padx=10, pady=10)
+        detail.columnconfigure((0,7), weight=1)
+        detail.rowconfigure((0,9), weight=1)
+
+        threading.Thread(target=self.get_spots(country, self.map_widget, detail), daemon=True).start()
+        top.mainloop()
+
+
+def load_more(cur, cards, btn_fr, home, recommendation):
+
+    btn_fr.grid_forget()
+    total = cur + 12
+    if total > 222:
+        total = 222
+
+    rec = recommendation.recommend(top_n=total)
