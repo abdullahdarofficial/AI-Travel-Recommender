@@ -141,3 +141,16 @@ class Card(ctk.CTkFrame):
             lat, lng = geo_code(country)
             map.set_position(lat, lng, marker=True, text=country)
 
+            # map.set_address(country, marker=True)
+
+            x, y = self.places[self.places['name'] == str][['lat', 'lng']].values[0]
+            map.set_marker(x, y, str)
+
+            place = get_places(None, x, y, place=False)
+
+            map.set_position(x, y)
+            map.set_zoom(13)
+            print(place)
+
+            for pl in place['features']:
+                map.set_marker(pl['geometry']['coordinates'][1], pl['geometry']['coordinates'][0], pl['properties']['name'])
