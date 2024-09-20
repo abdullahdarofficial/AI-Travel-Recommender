@@ -435,3 +435,10 @@ def askAI_2(prompt):
         convo_history.append({"role": "user", "content": f"{prompt}"})
         convo_history.append({"role": "assistant", "content": f"{text}"})
         return True, text
+
+
+def show_recommendation(fr, countries, row):
+
+    roll = ctk.CTkScrollableFrame(fr, corner_radius=19, orientation='horizontal', width=1250, height=250)
+    roll.grid(row=row, column=0, padx=20, pady=20, columnspan=3)
+
