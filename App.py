@@ -223,3 +223,17 @@ class Card(ctk.CTkFrame):
         self.search_entry.bind('<Return>', lambda e: self.search())
 
         search_button = ctk.CTkButton(search_frame, text='', width=20, height=30, fg_color='#1A1A1A',
+                                    corner_radius=19, command=self.search, hover_color='#373737',
+                                    image=ctk.CTkImage(dark_image=Image.open('Images/search.png'),size=(15,15)))
+        search_button.grid(row=0, column=2, padx=5)
+
+        map_frame = ctk.CTkFrame(top, width=800, height=500)
+        map_frame.grid(row=1, column=1, padx=10, pady=10)
+        map_frame.columnconfigure((0,7), weight=1)
+
+        self.map_widget = map.TkinterMapView(map_frame, width=750, height=450, corner_radius=19)
+        self.map_widget.grid(row=0, column=1, padx=1, pady=1)
+        self.map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga")
+
+
+        lat, lng = geo_code(country)
