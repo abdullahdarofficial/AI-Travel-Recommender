@@ -109,3 +109,14 @@ class Card(ctk.CTkFrame):
 
             if best_result is not None:
                 text = best_result['formatted']
+                latitude = best_result['lat']
+                longitude = best_result['lon']
+
+                self.map_widget.set_position(latitude, longitude, marker=True, text=text)
+
+            # self.map_widget.set_address(self.search_entry.get(), marker=True)
+            # self.map_widget.set_zoom(10)
+            self.map_widget.update()
+
+        except Exception as e:
+            tk.messagebox.showerror('Error', str(e))
