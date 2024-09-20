@@ -237,3 +237,17 @@ class Card(ctk.CTkFrame):
 
 
         lat, lng = geo_code(country)
+        self.map_widget.set_position(lat, lng, marker=True, text=country)
+
+        # try:
+        #    a = self.map_widget.set_address(special_cases.get(country)if special_cases.get(country)else country,marker=True,text=country)
+        #    if not a:
+        #         tk.messagebox.showerror('Error', str('Check Internet Connection\n Connection Time Out!!'))
+
+        # except Exception as e:
+        #     if '403' in str(e):
+        #         tk.messagebox.showerror('Error-403', str('request blocked by the server\nTry again later!!'))
+        #     else:
+        #         tk.messagebox.showerror('Error', str('Check Internet Connection\n Connection Time Out!!'))
+
+
