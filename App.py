@@ -294,3 +294,17 @@ def load_more(cur, cards, btn_fr, home, recommendation):
 def home_page(fr):
 
     home = ctk.CTkScrollableFrame(fr, corner_radius=19, fg_color='transparent', width=1310, height=640)
+    home.grid(row=0, column=0)
+
+    ctk.CTkLabel(home, text='Top Destinations for you', font=('Arial', 20, 'bold')).grid(row=0, column=0, pady=(0,2))
+
+    recommendation = HybridRecommender(collaborative_model=(True, id, 'CF_Neural_Model3.7.bin'),
+                        popularity_model=True, content_model=True,
+                        popular_weight=0.15, collab_weight=0.7, content_weight=0.15
+                        )
+    rec = recommendation.recommend(top_n=16)
+
+    cards = []
+    for i in range(len(rec)):
+        card = Card(home, title=rec['Country'].iloc[i], cr=19, fg_color='gray29', border_width=5)
+        card.grid(row=1+i//4, column=i%4, padx=(40, 0), pady=(40, 0))
