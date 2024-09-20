@@ -325,3 +325,21 @@ def askAI_1(prompt):
     if prompt.lower().startswith("/suggest"):
         prompt = prompt.lower()
         prompt = prompt.replace("/suggest", "", 1).strip()
+
+        response = requests.post('https://fumes-api.onrender.com/llama3',
+        json={
+        'prompt': [
+            {
+                'role': 'system',
+                'content': 'You have to analyse the user prompt and suggest them countries based on their preferences. you only have to suggest them countries based on their preferences. You Have to Follow a specific format to suggest them countries in all cases no exception. The format is: [country Name1, Country Name2, Country Name3...]'
+            },
+            {'role': 'user','content': f'{prompt}'}
+        ],
+        "temperature":0.5,
+        "topP":0.3,
+        "lengthPenality":0.3,
+        "maxTokens": 2000
+        }, stream=True)
+
+        text = ''
+        for chunk in response.iter_content(chunk_size=1024):
