@@ -380,3 +380,19 @@ def askAI_1(prompt):
                 chunk_decoded = chunk.decode('utf-8')
                 if chunk_decoded.strip():  # Check if chunk_decoded is not empty
                     data = json.loads(chunk_decoded)
+                    content = data.get('choices', [{}])[0].get('delta', {}).get('content', '')
+                    text += content
+
+        text = text.replace('YOU CAN BUY ME COFFE! https://buymeacoffee.com/mygx', '')
+        return True, text
+
+
+def askAI_2(prompt):
+    api_key = None
+    with open('OpenAI_API.bin', 'rb') as f:
+            api_key = pickle.load(f)
+
+    client = OpenAI(api_key=api_key)
+
+    if prompt.lower().startswith("/suggest"):
+        prompt = prompt.lower()
