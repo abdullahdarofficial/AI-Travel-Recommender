@@ -191,3 +191,20 @@ class Card(ctk.CTkFrame):
             ctk.CTkLabel(fr, text='No Cities Data Available for this Country!!', font=('Arial', 14, 'bold')).grid(row=1, column=1, padx=10, pady=10)
 
         if len(self.places) > 4:
+            top_three = self.places.iloc[:3]
+
+            remaining = self.places.iloc[3:]
+            remaining = remaining.sample(n=min(5, len(remaining)))
+            self.places = pd.concat([top_three, remaining])
+
+        for i in range(len(self.places)):
+            btn = ctk.CTkButton(fr, text=self.places.iloc[i]['name'], corner_radius=19, fg_color='#1A1A1A', width=170, height=90,
+                                hover_color='#373737', command=lambda name=self.places.iloc[i]['name']: patani_wrapper(name))
+            btn.grid(row=1+i//3, column=1+i%3, padx=10, pady=10)
+
+        map.update()
+
+    def view_detail(self, country):
+        global special_cases
+
+        top = ctk.CTkToplevel()
