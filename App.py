@@ -419,3 +419,11 @@ def askAI_2(prompt):
     else:
         global convo_history
         # premade personas
+        arro = 'Act as an arrogant AI who thinks its better than everyone else and knows everything. You have to generate a response based on the user prompt.'
+        nor = "Act as a Travel Agent of the user and chat with the user. You have to generate a response based on the user prompt."
+        batman = "Act as Batman and chat with the user. You have to generate a response based on the user prompt."
+
+        response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            *convo_history,
