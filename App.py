@@ -362,3 +362,21 @@ def askAI_1(prompt):
 
     else:
         response = requests.post('https://fumes-api.onrender.com/llama3',
+        json={
+        'prompt': [
+        {
+            'role': 'system',
+            'content': 'Act as a good and nice AI and chat with the user. You have to generate a response based on the user prompt.'
+        },
+        {'role': 'user','content': f'{prompt}'}
+        ],
+        "temperature":1.6,
+        "maxTokens": 1000
+        }, stream=True)
+
+        text = ''
+        for chunk in response.iter_content(chunk_size=1024):
+            if chunk:
+                chunk_decoded = chunk.decode('utf-8')
+                if chunk_decoded.strip():  # Check if chunk_decoded is not empty
+                    data = json.loads(chunk_decoded)
