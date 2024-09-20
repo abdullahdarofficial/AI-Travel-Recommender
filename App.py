@@ -21,3 +21,10 @@ def geo_code(place):
 
     return latitude, longitude
 
+
+def get_places(geo_id, lat, lon, place=True):
+    ID_url = f"https://api.geoapify.com/v1/geocode/reverse?lat={lat}&lon={lon}&format=json&apiKey=d76f029b27e04a9cb47a5356a7bf2a87"
+
+    if place:
+        response = requests.get(ID_url)
+        id = response.json()
