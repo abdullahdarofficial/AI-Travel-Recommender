@@ -67,3 +67,12 @@ class Card(ctk.CTkFrame):
             self.image_label = ctk.CTkLabel(self, image=self.image, text='', corner_radius=cr)
             self.image_label.grid(row=0, column=0, columnspan=3, padx=16, pady=(5, 2), sticky="ewn")
 
+        else:
+            self.image = ctk.CTkImage(dark_image=Image.open('Images/' + image),
+                                    light_image=Image.open('Images/' + image),
+                                    size=self.image_dim)
+            self.image_label = ctk.CTkLabel(self, image=self.image, text='', corner_radius=cr)
+            self.image_label.grid(row=0, column=0, columnspan=3, padx=16, pady=(5, 2), sticky="ewn")
+
+        self.body_dim = (width-16, height*0.6)
+        self.body = ctk.CTkFrame(self, width=self.body_dim[0], height=self.body_dim[1], corner_radius=cr, border_width=3)
