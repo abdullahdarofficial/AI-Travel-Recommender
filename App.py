@@ -98,3 +98,14 @@ class Card(ctk.CTkFrame):
             response = requests.get(url)
 
             response = response.json()
+
+            highest_confidence = 0
+            best_result = None
+
+            for result in response['results']:
+                if result['rank']['confidence'] > highest_confidence:
+                    highest_confidence = result['rank']['confidence']
+                    best_result = result
+
+            if best_result is not None:
+                text = best_result['formatted']
