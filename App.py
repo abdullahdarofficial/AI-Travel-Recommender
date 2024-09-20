@@ -8,3 +8,7 @@ import requests, threading, re, pickle
 from openai import OpenAI
 import json, time
 from tkGIF import gifplay
+
+r = 0
+
+def
