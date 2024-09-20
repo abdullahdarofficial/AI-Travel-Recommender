@@ -454,3 +454,19 @@ def show_recommendation(fr, countries, row):
             card.grid(row=0, column=i, padx=(40, 40) , pady=15)
         else:
             card.grid(row=0, column=i, padx=(40, 0) , pady=15)
+
+
+def chat_page(fr):
+
+    def send_message(fr, msg, msg_box):
+        if msg == '':
+            return
+
+        global r
+        msg_box.delete(0, 'end')
+        r -=- 1
+        user_fr = ctk.CTkFrame(fr, corner_radius=19, fg_color='#373737')
+        user_fr.grid(row=r, column=2, padx=10, pady=10, sticky='e')
+        ctk.CTkLabel(user_fr, text=msg, corner_radius=19, wraplength=550, font=('Arial', 13, 'bold')).grid(row=0, column=0, padx=8, pady=8, sticky='e')
+        fr._parent_canvas.yview_moveto(1.0)
+        fr.update()
