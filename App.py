@@ -427,3 +427,11 @@ def askAI_2(prompt):
         model="gpt-3.5-turbo",
         messages=[
             *convo_history,
+            {"role": "system", "content": f"{nor}"},
+            {"role": "user", "content": f"{prompt}"}
+        ])
+
+        text = response.choices[0].message.content
+        convo_history.append({"role": "user", "content": f"{prompt}"})
+        convo_history.append({"role": "assistant", "content": f"{text}"})
+        return True, text
