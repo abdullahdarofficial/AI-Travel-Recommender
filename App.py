@@ -564,3 +564,11 @@ if __name__ == '__main__':
                             )
         home.place(x=0, y=0, anchor='nw')
         home.add(' Home ')
+        home.add(' Chat ')
+        home.set(' Home ')
+
+        home_page(home.tab(' Home '))
+
+        chat_page(home.tab(' Chat '))
+
+        app.mainloop()
