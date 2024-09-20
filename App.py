@@ -37,3 +37,15 @@ def get_places(geo_id, lat, lon, place=True):
         iso = get_iso(lat, lon)
         iso_id = iso['properties']['id']
         url = f"https://api.geoapify.com/v2/places?categories=accommodation.hotel,accommodation.hut,activity,sport,heritage,ski,tourism,leisure,natural,rental.bicycle,rental.ski,entertainment&conditions=named&filter=geometry:{iso_id}&limit=10&apiKey=d76f029b27e04a9cb47a5356a7bf2a87"
+        result = requests.get(url)
+
+    return result.json()
+
+def get_iso(lat, lon):
+    url_iso = f'https://api.geoapify.com/v1/isoline?lat={lat}&lon={lon}&type=time&mode=drive&range=900&apiKey=d76f029b27e04a9cb47a5356a7bf2a87'
+    result = requests.get(url_iso)
+    return result.json()
+
+
+convo_history = []
+
