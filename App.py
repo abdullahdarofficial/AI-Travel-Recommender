@@ -280,3 +280,17 @@ def load_more(cur, cards, btn_fr, home, recommendation):
         total = 222
 
     rec = recommendation.recommend(top_n=total)
+    for i in range(cur, total):
+        card = Card(home, title=rec['Country'].iloc[i], cr=19, fg_color='gray29', border_width=5)
+        card.grid(row=1+i//4, column=i%4, padx=(40, 0), pady=(40, 0))
+        cards.append(card)
+
+    if total < 222:
+        btn_fr.grid(row=2+len(cards)//4, column=0, columnspan=4, pady=30, sticky='ew')
+    else:
+        ctk.CTkLabel(home, text='', fg_color='transparent').grid(row=2+len(cards)//4, column=0, columnspan=4, pady=20)
+
+
+def home_page(fr):
+
+    home = ctk.CTkScrollableFrame(fr, corner_radius=19, fg_color='transparent', width=1310, height=640)
