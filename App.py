@@ -448,3 +448,9 @@ def show_recommendation(fr, countries, row):
 
     for i in range(len(countries)):
         if '...' in countries[i]:
+            countries[i] = countries[i].replace('...', '')
+        card = Card(roll, title=countries[i], cr=19, fg_color='gray29', border_width=5)
+        if i == len(countries)-1:
+            card.grid(row=0, column=i, padx=(40, 40) , pady=15)
+        else:
+            card.grid(row=0, column=i, padx=(40, 0) , pady=15)
