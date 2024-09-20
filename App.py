@@ -49,3 +49,11 @@ def get_iso(lat, lon):
 
 convo_history = []
 
+
+special_cases = {'Greenland': 'Kalaallit Nunaat', 'Bangladesh': 'Dhaka,Bangladesh', 'Jordan': 'Amman,Jordan', 'Lebanon': 'Beirut,Lebanon',
+                'palau': 'Ngerulmud,palau', 'Armenia': 'Yerevan,Armenia', 'Sudan':'Khartoum,Sudan'}
+
+
+class Card(ctk.CTkFrame):
+    def __init__(self, *args, title=None, width: int = 250, height: int = 275, cr: int = 19, image=None, **kwargs):
+        super().__init__(*args, corner_radius=cr, width=width, height=height, **kwargs)
