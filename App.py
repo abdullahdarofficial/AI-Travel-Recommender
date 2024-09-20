@@ -169,3 +169,15 @@ class Card(ctk.CTkFrame):
             top.rowconfigure((0,5), weight=1)
 
 
+            icon_lbl = ctk.CTkLabel(top, text='')
+            icon_lbl.grid(row=1, column=1, padx=10, pady=10)
+
+            ctk.CTkLabel(top, text='Please wait while the little elves draw your map', wraplength=150, font=('Arial', 13)).grid(row=2, column=1, padx=10, pady=5)
+
+            gif = gifplay(icon_lbl,'./Images/loading.gif', 0.01)
+            gif.play()
+
+            while th.is_alive():
+                top.update()
+                time.sleep(0.01)
+
