@@ -57,3 +57,13 @@ special_cases = {'Greenland': 'Kalaallit Nunaat', 'Bangladesh': 'Dhaka,Banglades
 class Card(ctk.CTkFrame):
     def __init__(self, *args, title=None, width: int = 250, height: int = 275, cr: int = 19, image=None, **kwargs):
         super().__init__(*args, corner_radius=cr, width=width, height=height, **kwargs)
+
+        self.image_dim = (width-32, (height*0.45)-7)
+        self.places = None
+        if image is None:
+            self.image = ctk.CTkImage(dark_image=Image.open('Images/no image d.png'),
+                                    light_image=Image.open('Images/no image l.png'),
+                                    size=self.image_dim)
+            self.image_label = ctk.CTkLabel(self, image=self.image, text='', corner_radius=cr)
+            self.image_label.grid(row=0, column=0, columnspan=3, padx=16, pady=(5, 2), sticky="ewn")
+
