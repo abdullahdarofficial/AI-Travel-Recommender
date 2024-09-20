@@ -554,3 +554,13 @@ if __name__ == '__main__':
 
         app = ctk.CTk()
         app.title('AI-Travel Recommender')
+        app.geometry('1353x680')
+        app.resizable(False, False)
+        app.columnconfigure(0, weight=1)
+        app.rowconfigure(0, weight=1)
+
+        home = ctk.CTkTabview(app, width=1353, height=680, corner_radius=0, fg_color='transparent', anchor='n',
+                            segmented_button_fg_color='#1A1A1A', segmented_button_unselected_color='#1A1A1A'
+                            )
+        home.place(x=0, y=0, anchor='nw')
+        home.add(' Home ')
