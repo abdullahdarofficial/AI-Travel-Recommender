@@ -120,3 +120,13 @@ class Card(ctk.CTkFrame):
 
         except Exception as e:
             tk.messagebox.showerror('Error', str(e))
+
+    def satelite_tile(self):
+        if self.map_widget.tile_server != "https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga":
+            self.map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga")
+            self.map_widget.update()
+
+    def default_tile(self):
+        if self.map_widget.tile_server != "https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga":
+            self.map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga")
+            self.map_widget.update()
