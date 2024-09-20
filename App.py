@@ -154,3 +154,18 @@ class Card(ctk.CTkFrame):
 
             for pl in place['features']:
                 map.set_marker(pl['geometry']['coordinates'][1], pl['geometry']['coordinates'][0], pl['properties']['name'])
+            map.update()
+
+        def patani_wrapper(name):
+            th = threading.Thread(target=patani, args=(name,), daemon=True)
+            th.start()
+
+            top = ctk.CTkToplevel()
+            top.title('Please Wait...')
+            top.geometry('300x150')
+            top.grab_set()
+            top.resizable(False, False)
+            top.columnconfigure((0,5), weight=1)
+            top.rowconfigure((0,5), weight=1)
+
+
