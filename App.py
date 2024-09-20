@@ -181,3 +181,13 @@ class Card(ctk.CTkFrame):
                 top.update()
                 time.sleep(0.01)
 
+            top.destroy()
+            top.mainloop()
+
+        df = pd.read_csv('world-cities.csv')
+        self.places = df[df['country'] == country][['name', 'lat', 'lng']]
+
+        if len(self.places) == 0:
+            ctk.CTkLabel(fr, text='No Cities Data Available for this Country!!', font=('Arial', 14, 'bold')).grid(row=1, column=1, padx=10, pady=10)
+
+        if len(self.places) > 4:
