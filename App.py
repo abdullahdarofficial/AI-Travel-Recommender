@@ -130,3 +130,14 @@ class Card(ctk.CTkFrame):
         if self.map_widget.tile_server != "https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga":
             self.map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga")
             self.map_widget.update()
+
+    def get_spots(self, country, map, fr):
+
+        def patani(str):
+            print(str)
+            map.delete_all_marker()
+
+            # using different api to get the geo code as i am blocked by the previous api :(
+            lat, lng = geo_code(country)
+            map.set_position(lat, lng, marker=True, text=country)
+
