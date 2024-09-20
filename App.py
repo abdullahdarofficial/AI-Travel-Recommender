@@ -482,3 +482,19 @@ def chat_page(fr):
 
         else:
             show_recommendation(fr, respose, r)
+        fr._parent_canvas.yview_moveto(1.0)
+
+    fr.columnconfigure((0,7), weight=1)
+    chat = ctk.CTkScrollableFrame(fr, corner_radius=19, width=1310, height=510, fg_color='transparent')
+    chat.grid(row=0, column=1, pady=(0, 5))
+    chat.columnconfigure(1, weight=1)
+
+    chat_bar = ctk.CTkFrame(fr, corner_radius=19, width=1290, height=90)
+    chat_bar.grid(row=1, column=1, padx=5, pady=5)
+    chat_bar.columnconfigure((0,7), weight=1)
+
+    chat_box = ctk.CTkEntry(chat_bar, width=900, height=30, corner_radius=19, placeholder_text='Type your message here...')
+    chat_box.grid(row=0, column=1, padx=(20, 10), pady=15)
+
+    chat_box.bind('<Return>', lambda e: send_message(chat, chat_box.get(), chat_box))
+
