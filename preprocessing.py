@@ -103,3 +103,11 @@ popular = ['France','Spain','United States','China','Italy','Mexico','Turkey','G
 'Philippines','Argentina', 'Finland', 'Peru','United Arab Emirates','Morocco','New Zealand','Colombia','Bulgaria','Saudi Arabia',
 'Hungary', 'Tunisia', 'Dominican Republic','Qatar', 'Chile','Slovakia','Oman','India','South Africa','Brazil','Cyprus','Nigeria',
 'Maldives', 'Pakistan', 'Uganda', 'Madagascar', 'Malawi', 'Sri Lanka']
+
+def calculate_popularity(country):
+    if country in popular:
+        return (100 - popular.index(country)) - random.uniform(0.000167, 0.132864)
+    else:
+        return random.uniform(18.23422, 37.05334)
+
+i = 0
