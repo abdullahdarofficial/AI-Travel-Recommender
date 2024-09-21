@@ -231,3 +231,15 @@ def calculate_visitors(country):
         print(i)
         i+=1
         return int(14_400_000)
+    if country == 'South Africa':
+        print(i)
+        i+=1
+        return int(10_200_000)
+    if country == 'Sweden':
+        print(i)
+        i+=1
+        return int(7_300_000)
+    if country == 'Argentina':
+        print(i)
+        i+=1
+        return int(6_800_000)
