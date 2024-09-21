@@ -109,3 +109,15 @@ class ContentBaseRecommender:
         return recommendation
 
 
+    def recommend(self, country, budget=200, num_of_rec=222, tf_idf=True, count_vectorizer=False):
+
+        keywords = []
+        for count in country:
+            like_df = self.data[self.data['Country'].str.lower() == count.lower()]
+            if like_df.empty:
+                print(f'Country {count} not found')
+            else:
+                keywords.append(like_df['keywords'].values[0])
+
+        keywords = ' '.join(keywords)
+
