@@ -279,3 +279,17 @@ def calculate_visitors(country):
         print(i)
         i+=1
         return int(14_700_000)
+    if country == 'Bangladesh':
+        print(i)
+        i+=1
+        return int(3_000_000)
+    if country == 'France':
+        print(i)
+        i+=1
+        return int(117_109_000)
+    if country == 'Poland':
+        print(i)
+        i+=1
+        return int(88_515_000)
+    else:
+        return random.randrange(100_000, 2_000_000)
