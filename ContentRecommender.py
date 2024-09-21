@@ -32,3 +32,8 @@ class ContentBaseRecommender:
         self.sim = cosine_similarity(self.vec_matrix, self.vec_matrix)
 
 
+    def process_data(self, data):
+
+        #print('processing data...')
+        #s(self.wait)
+
