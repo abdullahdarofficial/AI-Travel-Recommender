@@ -78,3 +78,17 @@ def fun2(row):
         row['climate'] = 'cold'
         row['keywords'] = row['keywords'].replace('  ', ' ')
         return row
+
+def convert(row):
+    row['avg cost per day'] = int(row['avg cost per day'])
+    # if row['country'] == 'Sri Lanka':
+    #     row['avg cost per day'] = int(data[data['country'] == 'Sri Lanka'].groupby('country')['avg cost per day'].mean().astype(int))
+    return row
+
+# df = df.apply(convert, axis=1)
+
+# print(df)
+
+
+
+#popularity = pd.DataFrame()
