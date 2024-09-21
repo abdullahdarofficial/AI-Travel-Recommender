@@ -37,3 +37,20 @@ class ContentBaseRecommender:
         #print('processing data...')
         #s(self.wait)
 
+        def update_keywords(row):
+            keywords = str(row['keywords'])
+            climate = str(row['climate'])
+            if climate == 'mix':
+                climate = 'cold hot'
+            return keywords + ' ' + climate
+
+        data['keywords'] = data.apply(update_keywords, axis=1)
+        data.drop('climate', axis=1, inplace=True)
+        data = data.drop_duplicates(subset='Country')
+        data['keywords'] = data['keywords'].str.replace(r'\s+', ' ')
+
+        #print('data processed')
+        #s(self.wait)
+        return data
+
+
