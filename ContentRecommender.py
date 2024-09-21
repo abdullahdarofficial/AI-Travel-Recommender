@@ -121,3 +121,10 @@ class ContentBaseRecommender:
 
         keywords = ' '.join(keywords)
 
+        if tf_idf and count_vectorizer:
+            tf_idf_matrix = self.tf_idf.transform([keywords])
+            vec_matrix = self.vec.transform([keywords])
+            rec1 = self.get_TF_IDF_recomendation(tf_idf_matrix, budget, num_of_rec)
+            rec2 = self.get_CountVectorizer_recomendation(vec_matrix, budget, num_of_rec)
+            return rec1, rec2
+
