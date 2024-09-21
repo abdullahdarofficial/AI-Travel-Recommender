@@ -61,3 +61,20 @@ def fun(row):
             if set4[i] not in row['keywords']:
                 row['keywords'] += ' ' + set4[i]
         return row
+
+def fun2(row):
+    if 'mix' in row['keywords']:
+        row['keywords'] = row['keywords'].replace('mix', '')
+        row['climate'] = 'mix'
+        row['keywords'] = row['keywords'].replace('  ', ' ')
+        return row
+    elif 'hot' in row['keywords']:
+        row['keywords'] = row['keywords'].replace('hot', '')
+        row['climate'] = 'hot'
+        row['keywords'] = row['keywords'].replace('  ', ' ')
+        return row
+    elif 'cold' in row['keywords']:
+        row['keywords'] = row['keywords'].replace('cold', '')
+        row['climate'] = 'cold'
+        row['keywords'] = row['keywords'].replace('  ', ' ')
+        return row
