@@ -35,3 +35,17 @@ def fun(row):
                 row['keywords'] += ' ' + set1[i]
         return row
 
+    elif 'asia' in row['keywords']:
+        row['keywords'] += ' ' + set_weather2[random.randint(0, 2)]
+        for i in range(random.randint(2, 5)):
+            if set2[i] not in row['keywords']:
+                row['keywords'] += ' ' + set2[i]
+        return row
+
+    elif 'africa' in row['keywords']:
+        row['keywords'] += ' ' + set_weather3[random.randint(0, 1)]
+        for i in range(random.randint(2, 4)):
+            if set3[i] not in row['keywords']:
+                row['keywords'] += ' ' + set3[i]
+        return row
+
