@@ -22,3 +22,13 @@ class ContentBaseRecommender:
         self.tf_idf = TfidfVectorizer(stop_words='english')
         self.vec = CountVectorizer(stop_words='english')
 
+        self.tf_idf_matrix = self.tf_idf.fit_transform(self.data['keywords'])
+        self.vec_matrix = self.vec.fit_transform(self.data['keywords'])
+
+        #print('calculating similarity...')
+        #s(self.wait)
+
+        self.cosine_sim = cosine_similarity(self.tf_idf_matrix, self.tf_idf_matrix)
+        self.sim = cosine_similarity(self.vec_matrix, self.vec_matrix)
+
+
