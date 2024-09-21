@@ -251,3 +251,19 @@ def calculate_visitors(country):
         print(i)
         i+=1
         return int(4_900_000)
+    if country == 'Indonesia':
+        print(i)
+        i+=1
+        return int(16_100_000)
+    if country == 'Ireland':
+        print(i)
+        i+=1
+        return int(10_800_000)
+    if country == 'Morocco':
+        print(i)
+        i+=1
+        return int(12_300_000)
+    if country == 'Nepal':
+        print(i)
+        i+=1
+        return int(601_360)
