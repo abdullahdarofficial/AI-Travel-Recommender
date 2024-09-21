@@ -111,3 +111,14 @@ def calculate_popularity(country):
         return random.uniform(18.23422, 37.05334)
 
 i = 0
+
+def calculate_visitors(country):
+    global i
+    if country == 'Mexico':
+        print(i)
+        i+=1
+        return int(51128000)
+    if country == 'United States':
+        print(i)
+        i+=1
+        return int(45037000)
