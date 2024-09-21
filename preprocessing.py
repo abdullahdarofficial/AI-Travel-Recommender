@@ -92,3 +92,14 @@ def convert(row):
 
 
 #popularity = pd.DataFrame()
+
+#popularity['Country'] = df['country']
+
+#popularity = pd.read_csv('world-popularity.csv')
+
+popular = ['France','Spain','United States','China','Italy','Mexico','Turkey','Germany','United Kingdom','Thailand','Japan','Canada',
+'Russia','Malaysia','Greece','Portugal','Austria','Australia','Netherlands','Switzerland','Singapore','South Korea','Hong Kong',
+'Czech Republic','Poland', 'Sweden', 'Denmark', 'Egypt', 'Croatia','Norway', 'Indonesia', 'Ireland', 'Romania','Belgium','Vietnam',
+'Philippines','Argentina', 'Finland', 'Peru','United Arab Emirates','Morocco','New Zealand','Colombia','Bulgaria','Saudi Arabia',
+'Hungary', 'Tunisia', 'Dominican Republic','Qatar', 'Chile','Slovakia','Oman','India','South Africa','Brazil','Cyprus','Nigeria',
+'Maldives', 'Pakistan', 'Uganda', 'Madagascar', 'Malawi', 'Sri Lanka']
