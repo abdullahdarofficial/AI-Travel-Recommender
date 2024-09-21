@@ -80,4 +80,18 @@ class ContentBaseRecommender:
         return recommendation
 
 
+    def get_CountVectorizer_recomendation(self, keywords, budget, num_of_rec=5):
+
+        #idx = self.data[self.data['Country'].str.lower() == country.lower()].index[0]
+        self.sim = cosine_similarity(keywords, self.vec_matrix)
+
+        sim_scores = list(enumerate(self.sim[0]))
+
+        sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+        #print('score: ',sim_scores)
+
+        country_indices = [i[0] for i in sim_scores]
+
+        reced = 0
+        recommendation = pd.DataFrame(columns=['ID', 'Country', 'Cost Per Day', 'Similarity'])
 
