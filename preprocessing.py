@@ -301,3 +301,17 @@ def calculate_visitors(country):
 #popularity.drop_duplicates(inplace=True)
 
 #print(popularity)
+
+# while True:
+#     print('Enter the country: ')
+#     country = input()
+#     if country == 'exit':
+#         break
+#     else:
+#         print(popularity[popularity['Country'].str.lower() == country.lower()])
+
+# popularity.to_csv('world-popularity.csv', index=False)
+#df.to_csv('world-countries.csv', index=False)
+
+# a = pd.read_csv('world-popularity.csv')
+# b = pd.read_csv('world-countries.csv')
