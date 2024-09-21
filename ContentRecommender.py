@@ -141,5 +141,3 @@ if __name__ == '__main__':
     recommender = ContentBaseRecommender('world-countries.csv', .5)
 
     print(recommender.recommend(['Pakistan', 'India', 'Japan'], count_vectorizer=False))
-
-
