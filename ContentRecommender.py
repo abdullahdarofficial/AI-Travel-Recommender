@@ -135,3 +135,11 @@ class ContentBaseRecommender:
         elif count_vectorizer:
             vec_matrix = self.vec.transform([keywords])
             return self.get_CountVectorizer_recomendation(vec_matrix, budget, num_of_rec)
+
+
+if __name__ == '__main__':
+    recommender = ContentBaseRecommender('world-countries.csv', .5)
+
+    print(recommender.recommend(['Pakistan', 'India', 'Japan'], count_vectorizer=False))
+
+
