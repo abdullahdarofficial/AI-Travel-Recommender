@@ -128,3 +128,10 @@ class ContentBaseRecommender:
             rec2 = self.get_CountVectorizer_recomendation(vec_matrix, budget, num_of_rec)
             return rec1, rec2
 
+        elif tf_idf:
+            tf_idf_matrix = self.tf_idf.transform([keywords])
+            return self.get_TF_IDF_recomendation(tf_idf_matrix, budget, num_of_rec)
+
+        elif count_vectorizer:
+            vec_matrix = self.vec.transform([keywords])
+            return self.get_CountVectorizer_recomendation(vec_matrix, budget, num_of_rec)
