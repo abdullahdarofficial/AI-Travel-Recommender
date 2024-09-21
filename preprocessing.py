@@ -49,3 +49,15 @@ def fun(row):
                 row['keywords'] += ' ' + set3[i]
         return row
 
+    elif 'northamerica' in row['keywords']:
+        row['keywords'] += ' ' + set_weather3[random.randint(0, 1)]
+        for i in range(random.randint(2, 5)):
+            if set4[i] not in row['keywords']:
+                row['keywords'] += ' ' + set4[i]
+        return row
+
+    elif 'southamerica' in row['keywords']:
+        for i in range(random.randint(2, 4)):
+            if set4[i] not in row['keywords']:
+                row['keywords'] += ' ' + set4[i]
+        return row
