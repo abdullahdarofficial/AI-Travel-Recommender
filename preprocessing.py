@@ -17,4 +17,21 @@ import random
 
 #a = data.groupby('country')['avg cost per day'].mean().astype(int)
 #df = df.set_index('country').join(a).reset_index()
-#df
+#df['avg cost per day'] = df['avg cost per day'].fillna(0).astype(int)
+
+def fun(row):
+    set1 = ['food', 'history', 'culture', 'beach', 'mountain', 'plain']
+    set_weather1 = ['cold', 'mix']
+    set_weather2 = ['hot', 'cold', 'mix']
+    set_weather3 = ['hot', 'mix']
+    set2 = ['food', 'history', 'culture', 'beach', 'mountain', 'plain', 'wildlife', 'forest', 'desert']
+    set3 = ['food', 'history', 'culture', 'beach', 'plain', 'desert', 'wildlife']
+    set4 = ['food', 'history', 'culture', 'mountain', 'forest', 'beach', 'plain', 'wildlife']
+
+    if 'europe' in row['keywords']:
+        row['keywords'] += ' ' + set_weather1[random.randint(0, 1)]
+        for i in range(random.randint(2, 4)):
+            if set1[i] not in row['keywords']:
+                row['keywords'] += ' ' + set1[i]
+        return row
+
