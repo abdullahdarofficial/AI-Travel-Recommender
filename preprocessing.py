@@ -243,3 +243,11 @@ def calculate_visitors(country):
         print(i)
         i+=1
         return int(6_800_000)
+    if country == 'Chile':
+        print(i)
+        i+=1
+        return int(5_700_000)
+    if country == 'Colombia':
+        print(i)
+        i+=1
+        return int(4_900_000)
