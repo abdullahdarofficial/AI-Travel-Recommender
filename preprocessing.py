@@ -331,3 +331,13 @@ def calculate_visitors(country):
 
 #print(a)
 #print(b)
+
+# countries = pd.read_csv('world-countries.csv')
+# popularity = pd.read_csv('world-popularity.csv')
+
+# #users = pd.read_csv('users-rating.csv')
+# print(countries[countries['keywords'].str.contains('plains')])
+# countries['keywords'] = countries['keywords'].str.replace(r'plains', 'plain')
+# print(countries[countries['keywords'].str.contains('plains')])
+
+# countries.to_csv('world-countries.csv', index=False)
