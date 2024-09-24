@@ -341,3 +341,14 @@ def calculate_visitors(country):
 # print(countries[countries['keywords'].str.contains('plains')])
 
 # countries.to_csv('world-countries.csv', index=False)
+
+import geocoder
+import time
+
+cites = pd.read_csv('world-cities.csv')
+
+x = []
+for city,country in cites[['name', 'country']].values:
+    print(city, country)
+    x.append(geocoder.osm(city+", "+country).latlng)
+
