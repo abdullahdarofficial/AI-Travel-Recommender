@@ -1,0 +1,6 @@
+numpy
+scikit-learn
+pandas
+tez
+customtkinter
+tkintermapview
