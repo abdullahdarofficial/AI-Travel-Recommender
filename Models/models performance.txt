@@ -1,0 +1,16 @@
+CF_Neural_Model2: rmse=2.5, loss=6.4 (trained with lr=0.0005, epochnum=25)
+CF_Neural_Model2.1(5 rating version): (overfitting) rmse=1.32, loss=1.75 (trained with lr=0.0008, epochnum=30)
+CF_Neural_Model2.1: (overfitting) rmse=2.44, loss=5.9 (trained with lr=0.0008, epochnum=30) should stoped at 20
+CF_Neural_Model2.1: rmse=2.43, loss=5.9 (trained with lr=0.0008, epochnum=20)
+
+CF_Neural_Model2.2: rmse=1.5, loss=2.3, (trained with lr=0.001, epochnum=20) [hidden layer in 32, out 20] i.e compression
+CF_Neural_Model2.3: rmse=1.5, loss=2.3, (trained with lr=0.001, epochnum=20)
+CF_Neural_Model2.4: rmse=1.5, loss=2.3, (trained with lr=0.001, epochnum=20) [hidden layer in 32, out 32]
+
+CF_Neural_Model3.1: rmse=1.41, loss=1.98, (trained with lr=0.001, epochnum=20) [hidden layer in 32, out 32],{need more complex model}
+CF_Neural_Model3.2: rmse=1.41, loss=1.99, (trained with lr=0.001, epochnum=20)
+CF_Neural_Model3.3: rmse=1.32, loss=1.75, (trained with lr=0.001, epochnum=30) [hidden layer in 64, out 64]
+CF_Neural_Model3.4: rmse=1.30, loss=1.70, (trained with lr=0.001, epochnum=30) 2*[hidden layer in 64, out 64]
+CF_Neural_Model3.5: rmse=1.27, loss=1.61, (trained with lr=0.001, epochnum=20) 2*[hidden layer in 128, out 128]
+CF_Neural_Model3.6: rmse=0.79, loss=0.64, (trained with lr=0.01, epochnum=20) 2*[hidden layer in 128, out 128]
+CF_Neural_Model3.7: rmse=0.74, loss=0.58, (trained with lr=0.01, epochnum=20) 3*[hidden layer in 128, out 128]*
